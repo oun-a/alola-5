@@ -1,0 +1,1 @@
+const _bl=document.getElementById('brandLogo');if(_bl)_bl.src='https://raw.githubusercontent.com/oun-a/alola-4/main/public/alola-logo.jpg';show('dashboard');

@@ -5,7 +5,7 @@ let db;try{db=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){db=null}
 if(!db)db={owners:[],properties:[],units:[],tenants:[],leases:[],dues:[],receipts:[],expenses:[],ownerTransfers:[],officeEntries:[],settings:{officeOpeningBalance:0}};
 for(const k of ['owners','properties','units','tenants','leases','dues','receipts','expenses','ownerTransfers','officeEntries']) if(!Array.isArray(db[k])) db[k]=[];
 if(!db.settings)db.settings={officeOpeningBalance:0};
-const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[m])),money=n=>Number(n||0).toLocaleString('ar-SA')+' ر.س',today=()=>new Date().toISOString().slice(0,10),uid=p=>p+'-'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[m])),money=n=>Number(n||0).toLocaleString('ar-SA',{minimumFractionDigits:2,maximumFractionDigits:2})+' ر.س',today=()=>new Date().toISOString().slice(0,10),uid=p=>p+'-'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 function save(){localStorage.setItem(KEY,JSON.stringify(db))}
 const get=(t,id)=>db[t].find(x=>x.id===id),ownerName=id=>get('owners',id)?.name||'—',propertyName=id=>get('properties',id)?.name||'—',unitName=id=>get('units',id)?.name||'—',tenantName=id=>get('tenants',id)?.name||'—';
 const nav=[['dashboard','🏠 الرئيسية'],['owners','👤 الملاك'],['properties','🏢 العقارات'],['units','🚪 الوحدات'],['tenants','👥 المستأجرون'],['leases','📄 العقود'],['dues','📅 الاستحقاقات'],['receipts','🧾 سندات القبض'],['expenses','💸 سندات الصرف'],['liabilities','💰 الذمم المالية'],['reports','📊 التقارير']];

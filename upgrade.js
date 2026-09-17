@@ -41,4 +41,5 @@
     });
   }
   const baseRender=render;render=function(page){baseRender(page);setTimeout(()=>{replaceRentLanguage();document.querySelectorAll('input[type="number"]').forEach(input=>input.step='0.01');setupFilters();exportBuilder();settingsCompany()},0)};
+  const enterpriseShow=show;show=function(page){document.body.classList.toggle('document-view',page==='document');enterpriseShow(page)};
 })();

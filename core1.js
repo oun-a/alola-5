@@ -1,4 +1,4 @@
-const LOGO='https://raw.githubusercontent.com/oun-a/alola-4/main/public/alola-logo.jpg';
+const LOGO='alola-logo.jpg';
 const QR='data:image/png;base64,'+(window.__ALOLA_QR||'');
 const KEY='alola_voice_complete_v1';
 let db;try{db=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){db=null}

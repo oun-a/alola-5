@@ -1,0 +1,30 @@
+/* Print layout only; the existing screen palette is unchanged. */
+@page { size: A4 portrait; margin: 10mm; }
+@media print {
+ html, body { margin:0!important; padding:0!important; background:white!important; height:auto!important; }
+ .app,.main,.lang-en .main,.document-view .main,.app:has(#document.active) .main { display:block!important; margin:0!important; padding:0!important; width:100%!important; max-width:none!important; }
+ .side,.notice,.language-toggle,.menu-toggle,.ux-toast,.screen-only,.screen-actions,.smart-filter,.tabs,.filterbar,.actions,.export-builder { display:none!important; }
+ .page { display:none!important; min-height:0!important; }
+ .page.printing { display:block!important; }
+ #document { min-height:0!important; }
+ .card,.doc,.tablewrap { overflow:visible!important; height:auto!important; max-height:none!important; box-shadow:none!important; break-inside:auto!important; page-break-inside:auto!important; }
+ .table,.voucher-grid { width:100%!important; min-width:0!important; table-layout:fixed; border-collapse:collapse; }
+ th,td { overflow-wrap:anywhere; word-break:normal; white-space:normal!important; }
+ .table th { position:static!important; }
+ thead { display:table-header-group; }
+ tfoot { display:table-footer-group; }
+ tr { break-inside:avoid; page-break-inside:avoid; }
+ h1,h2,h3,.dochead,.voucher-header,.voucher-title { break-after:avoid; }
+ p { orphans:3; widows:3; }
+ .cards { display:grid!important; grid-template-columns:repeat(2,minmax(0,1fr))!important; break-inside:avoid; }
+ .cards>div { min-width:0; min-height:0!important; }
+ body.print-voucher .voucher-doc { box-sizing:border-box!important; width:100%!important; max-width:100%!important; margin:0!important; }
+ body.print-voucher .voucher-topline,body.print-voucher .voucher-signatures { grid-template-columns:repeat(3,minmax(0,1fr))!important; }
+ .voucher-signatures,.voucher-footer,.doc-footer { break-inside:avoid; }
+ .voucher-footer:after { position:static!important; transform:none!important; grid-column:2; }
+ .print-heading { display:block!important; margin-block-end:5mm; }
+}
+.print-heading { display:none; }
+@media print { [data-print-action="true"] { display:none!important; } .table { font-size:9pt; } .table th,.table td { padding:2mm!important; } .doc,.voucher-doc { overflow:visible!important; } a { color:inherit!important; text-decoration:none!important; } }
+
+@media print{body.print-voucher .voucher-grid tr{break-inside:auto;page-break-inside:auto}.voucher-footer:after{content:none!important}.print-asset-error{display:block}}

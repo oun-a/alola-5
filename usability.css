@@ -1,0 +1,7 @@
+.form-error {color:#872525;background:#fff0f0;border-inline-start:4px solid #a23a3a;border-radius:8px;padding:12px;margin-bottom:16px;overflow-wrap:anywhere}.formgrid>div{min-width:0}.num{font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.language-toggle{position:fixed;top:12px;margin:0;z-index:1200}.main{min-width:0}.table td{unicode-bidi:plaintext}.btn:disabled{cursor:wait}.voucher-grid td{unicode-bidi:plaintext}.print-asset-error{color:#872525;font-size:11px}@media(max-width:620px){.language-toggle{margin:8px 14px}.smart-filter>div{min-width:0;width:100%;flex-basis:100%}.cards{gap:10px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}@media print{.form-error{display:none!important}}
+body:not(.document-view) .main{padding-top:72px}.document-view .main{padding-top:68px}@media print{body:not(.document-view) .main,.document-view .main{padding-top:0!important}}
+
+.advanced-export{margin-block:12px 18px}.advanced-export>summary{cursor:pointer;padding:12px;color:var(--navy2);font-weight:650;border-bottom:1px solid var(--line)}.advanced-export[open]>.export-builder{margin-top:12px}
+
+.voucher-footer:after{content:none!important}.voucher-footer{grid-template-columns:1fr!important}
+@media(max-width:620px){.document-view .app:has(#document.active) .main{padding-top:70px}.voucher-company-meta{font-size:11px;line-height:1.5}}
